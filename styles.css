@@ -1,0 +1,312 @@
+/* import Rubik font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ============================
+     PRIMARY COLORS
+  ============================ */
+  --purple-600: hsl(246, 80%, 60%);
+
+  --orange-300: hsl(15, 100%, 70%); /* work */
+  --blue-300: hsl(195, 74%, 62%); /* play */
+  --pink-400: hsl(348, 100%, 68%); /* study */
+  --green-400: hsl(145, 58%, 55%); /* exercise */
+  --purple-700: hsl(264, 64%, 52%); /* social */
+  --yellow-300: hsl(43, 84%, 65%); /* self-care */
+
+  /* ============================
+     NEUTRAL COLORS
+  ============================ */
+  --navy-950: hsl(226, 43%, 10%);
+  --navy-900: hsl(235, 46%, 20%);
+  --purple-500: hsl(235, 45%, 61%);
+  --navy-200: hsl(236, 100%, 87%);
+
+  /* ============================
+     GENERAL USE
+  ============================ */
+  --text-light: var(--navy-200);
+  --text-muted: var(--purple-500);
+  --bg-dark: var(--navy-950);
+  --bg-card: var(--navy-900);
+
+  --border-radius: 1rem;
+  --padding-main: 1.5rem;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: white;
+  height: 100vh;
+  line-height: 1.5;
+}
+
+/* */
+
+main {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  /* padding: 2rem 1rem; */
+}
+
+.container {
+  max-width: 1110px;
+  width: calc(100% - 2rem * 2);
+  max-height: 520px;
+  height: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.875rem;
+  align-items: stretch;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-rows: auto min-content;
+  border-radius: var(--border-radius);
+  /* overflow: hidden; */
+  grid-column: 1 / 2;
+  grid-row: 1 / span 2;
+  background-color: var(--bg-card);
+  height: 100%;
+}
+
+.profile-card .profile-top {
+  background-color: var(--purple-600);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  gap: 2.625rem;
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+
+.profile-top img {
+  width: 78px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 3px solid white;
+}
+.top-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.report-for {
+  color: var(--navy-200);
+  font-size: 0.9rem;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-weight: 300;
+  overflow-wrap: break-word;
+}
+
+.timeframe-controls {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-main);
+  gap: 1.35rem;
+}
+.tf-btn {
+  background: none;
+  border: none;
+  color: var(--purple-500);
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+.tf-btn.active,
+.tf-btn:hover {
+  color: white;
+}
+
+/* ---------Cards------ */
+
+.card {
+  display: grid;
+  border-radius: var(--border-radius) var(--border-radius)
+    calc(var(--border-radius) * 2) calc(var(--border-radius) * 2);
+
+  -webkit-border-radius: var(--border-radius) var(--border-radius)
+    calc(var(--border-radius) * 2) calc(var(--border-radius) * 2);
+  -moz-border-radius: var(--border-radius) var(--border-radius)
+    calc(var(--border-radius) * 2) calc(var(--border-radius) * 2);
+  -ms-border-radius: var(--border-radius) var(--border-radius)
+    calc(var(--border-radius) * 2) calc(var(--border-radius) * 2);
+  -o-border-radius: var(--border-radius) var(--border-radius)
+    calc(var(--border-radius) * 2) calc(var(--border-radius) * 2);
+}
+
+.card-top {
+  min-height: 2.875rem;
+  margin-right: 1rem;
+  background-repeat: no-repeat;
+  background-position: right 0 top -10px;
+}
+
+.card-work {
+  background-color: var(--orange-300);
+}
+.card-work .card-top {
+  background-image: url("images/icon-work.svg");
+}
+.card-play {
+  background-color: var(--blue-300);
+}
+.card-play .card-top {
+  background-image: url("images/icon-play.svg");
+}
+.card-study {
+  background-color: var(--pink-400);
+}
+.card-study .card-top {
+  background-image: url("images/icon-study.svg");
+}
+.card-exercise {
+  background-color: var(--green-400);
+}
+.card-exercise .card-top {
+  background-image: url("images/icon-exercise.svg");
+}
+.card-social {
+  background-color: var(--purple-700);
+}
+.card-social .card-top {
+  background-image: url("images/icon-social.svg");
+}
+.card-self-care {
+  background-color: var(--yellow-300);
+}
+.card-self-care .card-top {
+  background-image: url("images/icon-self-care.svg");
+}
+
+/* Card content */
+
+.card-content {
+  background-color: var(--navy-900);
+  padding: var(--padding-main);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.ellipsis {
+  background: none;
+  border: none;
+  color: var(--navy-200);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.current {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+.previous {
+  color: var(--purple-500);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 4rem 0 !important;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    height: auto !important;
+    max-height: none !important;
+    gap: 1.5rem;
+  }
+
+  .profile-card .profile-top {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .timeframe-controls {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .current {
+    font-size: 2rem;
+  }
+  .card-body {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+  main {
+    padding: 4rem 0 !important;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    max-height: none;
+  }
+   .timeframe-controls {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .profile-card {
+    grid-column: span 2;
+  }
+  
+}
+
+
