@@ -4,7 +4,7 @@
 
 A responsive and interactive time-tracking dashboard that displays daily, weekly, and monthly activity stats with smooth transitions and hover effects.
 
-Live Demo:
+Live Demo:https://relaxed-kitsune-788530.netlify.app/
 
 ![Time Tracking Dashboard Preview](./preview.jpg)
 
